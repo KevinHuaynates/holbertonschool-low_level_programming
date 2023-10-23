@@ -1,16 +1,16 @@
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
-	NAME = school
+	EXECUTABLE = school
 
+all: $(EXECUTABLE)
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
-		$(CC) $(OBJ) -o $(NAME)
+$(EXECUTABLE): $(OBJ)
+		$(CC) $(OBJ) -o $(EXECUTABLE)
 
 %.o: %.c
 		$(CC) -c $< -o $@
 
 clean:
-		rm -f $(OBJ) $(NAME)
+		rm -f $(OBJ) $(EXECUTABLE)
+
