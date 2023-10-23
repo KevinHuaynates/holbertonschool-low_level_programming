@@ -10,7 +10,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(CC) $(OBJ) -o $@
+		$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
 		$(CC) -c $< -o $@
@@ -23,5 +23,5 @@ oclean:
 
 fclean: clean oclean
 
-re: fclean all
+re: clean all
 
