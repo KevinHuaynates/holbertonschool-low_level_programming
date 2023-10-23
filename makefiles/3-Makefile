@@ -1,16 +1,15 @@
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
-	NAME = school
 	RM = rm -f
-	TMP_FILES = *~ $(NAME)
+	TMP_FILES = *~ school
 
 .PHONY: all clean oclean fclean re
 
-all: $(NAME)
+all: school
 
-$(NAME): $(OBJ)
-		$(CC) $(OBJ) -o $(NAME)
+school: $(OBJ)
+		$(CC) $(OBJ) -o $@
 
 %.o: %.c
 		$(CC) -c $< -o $@
@@ -23,5 +22,5 @@ oclean:
 
 fclean: clean oclean
 
-re: $(RM) $(NAME) $(OBJ) all
+re: fclean all
 
