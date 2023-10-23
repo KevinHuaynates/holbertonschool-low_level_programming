@@ -2,15 +2,16 @@ CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 	NAME = school
+	EXECUTABLE = $(NAME)
 	RM = rm -f
-	TMP_FILES = *~ $(NAME)
+	TMP_FILES = *~ $(EXECUTABLE)
 
 .PHONY: all clean oclean fclean re
 
-all: $(NAME)
+all: $(EXECUTABLE)
 
-$(NAME): $(OBJ)
-		$(CC) $(OBJ) -o $(NAME)
+$(EXECUTABLE): $(OBJ)
+		$(CC) $(OBJ) -o $(EXECUTABLE)
 
 %.o: %.c
 		$(CC) -c $< -o $@
