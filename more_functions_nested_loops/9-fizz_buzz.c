@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 int main(void)
@@ -13,7 +12,8 @@ int main(void)
 								            printf("Buzz ");
 							        else
 									            printf("%d ", i);
+								    }
+	        printf("\n");
+		    return 0;
 }
- printf("\n");
-return 0;
-}
+
