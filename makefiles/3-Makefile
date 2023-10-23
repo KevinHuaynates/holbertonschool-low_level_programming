@@ -1,5 +1,4 @@
-C = gcc
-CFLAGS = -Wall -Werror -Wextra -pedantic
+CC = gcc
 RM = /bin/rm -f
 NAME = school
 
@@ -12,7 +11,7 @@ $(NAME): $(OBJ)
 		$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) -c $< -o $@
 
 clean:
 		$(RM) *~ *.o
