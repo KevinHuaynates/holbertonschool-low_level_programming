@@ -1,26 +1,29 @@
 C = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+RM = /bin/rm -f
+NAME = school
+
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
-	RM = rm -f
-	TMP_FILES = *~ school
 
-.PHONY: all clean oclean fclean re
+all: $(NAME)
 
-all: school
-
-school: $(OBJ)
-		$(CC) $(OBJ) -o $@
+$(NAME): $(OBJ)
+		$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
-		$(CC) -c $< -o $@
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-		$(RM) $(TMP_FILES)
+		$(RM) *~ *.o
 
 oclean:
-		$(RM) $(OBJ)
+		$(RM) *.o
 
-fclean: clean oclean
+fclean: clean
+		$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean oclean fclean re
 
