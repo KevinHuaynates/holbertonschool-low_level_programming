@@ -9,6 +9,7 @@ struct dog
 };
 
 void init_dog(struct dog *d, char *nombre, float edad, char *propietario);
+void print_dog(struct dog *d);
 
 #endif
 
