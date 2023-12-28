@@ -25,6 +25,6 @@ int find_sqrt(int n, int i)
 		return (i);
 	if (i * i > n)
 		return (-1);
-	return find_sqrt((n, i + 1));
+	return (find_sqrt(n, i + 1));
 }
 
